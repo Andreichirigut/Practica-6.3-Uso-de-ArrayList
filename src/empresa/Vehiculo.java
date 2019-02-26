@@ -5,6 +5,7 @@
  */
 package empresa;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -144,11 +145,23 @@ public class Vehiculo {
         } else {
             disponibilidad = false;
         }
-        String[] marca = {"Lexus", "Ferrari", "Maserrati", "Ford", "Renault", "Seat", "Fiat"};
-        String[] modelo = {"Marbella", "Pianto", "RSX300", "Focus", "Clio", "Marbella"};
+        ArrayList<String> marca = new ArrayList<>();
+        marca.add("Lexus");
+        marca.add("Ferrari");
+        marca.add("Maserrati");
+        marca.add("Ford");
+        marca.add("Renault");
+        marca.add("Seat");
+        marca.add("Fiat");
+        ArrayList<String> modelo = new ArrayList<>();
+        modelo.add("Marbella");
+        modelo.add("Pianto");
+        modelo.add("RSX300");
+        modelo.add("Focus");
+        modelo.add("Clio");
 
-        String marcaElegido = marca[rnd.nextInt(marca.length)];
-        String modeloElegido = modelo[rnd.nextInt(modelo.length)];
+        String marcaElegido = marca.get(rnd.nextInt(marca.size()));
+        String modeloElegido = modelo.get(rnd.nextInt(modelo.size()));
 
         Vehiculo v = new Vehiculo(Matricula, marcaElegido, modeloElegido, Color, Tarifa, disponibilidad);
         return v;
