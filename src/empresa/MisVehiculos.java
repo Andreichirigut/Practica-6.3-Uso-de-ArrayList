@@ -34,26 +34,25 @@ public class MisVehiculos {
         easydrive.imprimirVehiculos();
         //Rellena el array
         easydrive.rellenarCLientes();
-        easydrive.rellenarVehiculos();               
-        
+        easydrive.rellenarVehiculos();
+
         easydrive.imprimirClientes();
         easydrive.imprimirVehiculos();
-        
+
         System.out.println("---------------");
         //Ordeno el array
         easydrive.ordenarCliente();
         easydrive.ordenarVehiculos();
-        
+
         easydrive.imprimirClientes();
         easydrive.imprimirVehiculos();
-        
+
         System.out.println("----------------");
         //Busco el cliente concreto y el vehiculo concreto deseado
         easydrive.buscarCliente("21358003L");
         easydrive.buscarVehiculo("9326HLM");
-        
+
         easydrive.imprimirClientes();
         easydrive.imprimirVehiculos();
     }
 }
-

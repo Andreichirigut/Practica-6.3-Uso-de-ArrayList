@@ -162,7 +162,6 @@ public class Vehiculo {
 
         String marcaElegido = marca.get(rnd.nextInt(marca.size()));
         String modeloElegido = modelo.get(rnd.nextInt(modelo.size()));
-
         Vehiculo v = new Vehiculo(Matricula, marcaElegido, modeloElegido, Color, Tarifa, disponibilidad);
         return v;
 

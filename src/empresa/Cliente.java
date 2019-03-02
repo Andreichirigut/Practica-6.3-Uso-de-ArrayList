@@ -67,7 +67,7 @@ public class Cliente {
         nombre.add("Eduardo");
         nombre.add("Manolo");
         nombre.add("Felipe");
-        
+
         ArrayList<String> apellido = new ArrayList<>();
         apellido.add("Sanchez");
         apellido.add("Lopez");
@@ -77,9 +77,9 @@ public class Cliente {
         apellido.add("Montes");
 
         String nifrandom = "";
-        ArrayList <Integer> dni = new ArrayList<>(8);
+        ArrayList<Integer> dni = new ArrayList<>(8);
         for (int i = 0; i <= 8 - 1; i++) {
-            dni.add(rnd.nextInt(10));           
+            dni.add(rnd.nextInt(10));
 
         }
         String letra = "";

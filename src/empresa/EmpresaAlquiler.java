@@ -153,11 +153,8 @@ public class EmpresaAlquiler {
     método recorre el array clientes y va mostrando los datos de cada
     cliente.*/
     public void imprimirClientes() {
-        System.out.println("NIF cliente\tNombre\n");
-        for (Cliente c : this.clientes) {
-            System.out.println(c.getApellidos());
-            System.out.println(c.getNombre());
-            System.out.println(c.getNif());
+        for (int i = 0; i < this.totalClientes; i++) {
+            System.out.println(clientes.get(i));
         }
     }
 
@@ -166,14 +163,8 @@ public class EmpresaAlquiler {
     recorriendo el array vehiculos y llamando al método getAtributos() de cada
     uno .*/
     public void imprimirVehiculos() {
-        System.out.println("Matricula\tModelo\tColor\tImporte\tDisponible\n ");
-        for (Vehiculo v : this.vehiculos) {
-            System.out.println(v.getColor());
-            System.out.println(v.getMarca());
-            System.out.println(v.getMatricula());
-            System.out.println(v.getModelo());
-            System.out.println(v.getTarifa());
-            System.out.println(v.isDisponible());
+        for (int i = 0; i < this.totalVehiculos; i++) {
+            System.out.println(vehiculos.get(i));
         }
     }
 
@@ -191,19 +182,18 @@ public class EmpresaAlquiler {
     VehiculoAlquilado en el array alquileres.Este objeto relaciona un
     cliente, un vehículo, la fecha actual y los días de alquiler.*/
     private Cliente getCliente(String nif) {
-        for (Cliente c : this.clientes) {
-            if (c.getNif().equals(nif)) {
-                return c;
+        for (int i = 0; i < this.getTotalClientes(); i++) {
+            if (this.clientes.get(i).getNif().equals(nif)) {
+                return this.clientes.get(i);
             }
         }
-
         return null;
     }
 
     private Vehiculo getVehiculo(String matricula) {
-        for (Vehiculo c : this.vehiculos) {
-            if (c.getMatricula().equals(matricula)) {
-                return c;
+        for (int i = 0; i < this.getTotalVehiculos(); i++) {
+            if (this.vehiculos.get(i).getMatricula().equals(matricula)) {
+                return this.vehiculos.get(i);
             }
         }
 
@@ -251,18 +241,22 @@ public class EmpresaAlquiler {
         return "EmpresaAlquiler{" + "cif=" + cif + ", nombre=" + nombre + ", paginaWeb=" + paginaWeb + ", totalClientes=" + totalClientes + ", clientes=" + clientes + ", totalVehiculos=" + totalVehiculos + ", vehiculos=" + vehiculos + ", totalAlquileres=" + totalAlquileres + ", alquileres=" + alquileres + '}';
     }
 
-    public void rellenarCLientes() {
+    public ArrayList<Cliente> rellenarCLientes() {
         int clientesExistentes = this.totalClientes;
-        for (int i = 0; i < this.clientes.size() - clientesExistentes; i++) {
+        for (int i = 0; i < 10; i++) {
             registrarCliente(Cliente.clienteAleatorio());
+            this.totalClientes++;
         }
+        return this.clientes;
     }
 
-    public void rellenarVehiculos() {
+    public ArrayList<Vehiculo> rellenarVehiculos() {
         int vehiculosExistentes = this.totalVehiculos;
-        for (int i = 0; i < this.vehiculos.size() - vehiculosExistentes; i++) {
+        for (int i = 0; i < 10; i++) {
             registrarVehiculo(Vehiculo.vehiculoAleatorio());
+            this.totalVehiculos++;
         }
+        return this.vehiculos;
     }
 
     public ArrayList<Cliente> ordenarCliente() {
