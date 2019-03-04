@@ -200,8 +200,7 @@ public class EmpresaAlquiler {
         return null;
     }
 
-    public void alquilarVehiculo(String matricula, String nif,
-            int dias) {
+    public void alquilarVehiculo(String matricula, String nif, int dias) {
 
         Cliente cliente = getCliente(nif);
         Vehiculo vehiculo = getVehiculo(matricula);
@@ -243,7 +242,7 @@ public class EmpresaAlquiler {
 
     public ArrayList<Cliente> rellenarCLientes() {
         int clientesExistentes = this.totalClientes;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             registrarCliente(Cliente.clienteAleatorio());
             this.totalClientes++;
         }
@@ -252,7 +251,7 @@ public class EmpresaAlquiler {
 
     public ArrayList<Vehiculo> rellenarVehiculos() {
         int vehiculosExistentes = this.totalVehiculos;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             registrarVehiculo(Vehiculo.vehiculoAleatorio());
             this.totalVehiculos++;
         }
