@@ -5,6 +5,8 @@
  */
 package empresa;
 
+import java.util.Scanner;
+
 /**
  *
  * @author andrei
@@ -54,5 +56,28 @@ public class MisVehiculos {
 
         easydrive.imprimirClientes();
         easydrive.imprimirVehiculos();
+        
+        //Se alquila un vehiculo a un usuario
+        System.out.println("--------------");
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Dime tu Nif: ");     
+        String nif = teclado.nextLine();
+        System.out.println("Dime la matricula: ");
+        String matr = teclado.nextLine();
+        System.out.println("Dime los dias: ");
+        int dias = teclado.nextInt();
+        
+        easydrive.alquilarVehiculo(matr, nif, dias);
+        
+        System.out.println("---------------");
+        teclado.nextLine();
+        System.out.println("Dime tu Nif: ");     
+        nif = teclado.nextLine();
+        System.out.println(easydrive.buscarCliente(nif));
+        
+        System.out.println("Dime la matricula: ");
+        matr = teclado.nextLine();
+        System.out.println(easydrive.buscarVehiculo(matr));
+        
     }
 }
